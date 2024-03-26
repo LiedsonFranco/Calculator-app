@@ -1,33 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="tailwind.config.js"></script>
   <title>Frontend Mentor | Calculator app</title>
 </head>
-<body>
+<body class="box-content bg-very-dark-desaturated-blue text-white ">
 
-  <main class="p-5">
-    <div>
-      <h1>calc</h1>
-      <div>
-        <p>THEME</p>
-        <div>
-          <div>
+  <main class="p-5 ">
+    <div class="flex justify-between">
+      <h1 class="text-3xl font-bold">calc</h1>
+      <div class="flex items-center font-semibold">
+        <p class="self-end mr-7 mb-1 ">THEME</p>
+        <div class="flex flex-col">  
+          <div class="self-center  w-[80px] flex justify-between text-white mb-1">
             <p>1</p>
             <p>2</p>
             <p>3</p>
           </div>
-          <div>
-            <input type="range" name="range" id="theme" max="3">
+
+          <div >
+            <input type="range" name="range" id="theme" max="2" value="0" class="w-[100px]">
           </div>
-        
+
         </div>
       </div>
     </div>
-    <div class="" id="display"></div>
+    <div class="rounded-xl mt-8 p-3 pt-7 pb-7 bg-very-dark-desaturated-screen" id="display">
+      <p id="result" class="text-4xl font-bold text-right">399,981</p>
+    </div>
+    <div class="rounded-xl p-4 mt-4 bg-very-dark-desaturated-keypad">
+      <div class="m-2 flex justify-between">
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">7</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">8</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">9</button>
+        <button class="text-center text-2xl font-bold rounded-md bg-desaturated-dark-blue-key text-white w-[63px] h-[63px]">DEL</button>
+      </div>
+      <div class="m-2 flex justify-between">
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">4</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">5</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">6</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">+</button>
+      </div>
+      <div class="m-2 flex justify-between mt-1 mb-0">
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">1</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">2</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">3</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">-</button>
+      </div>
+      <div class="m-2 flex justify-between">
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">.</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">0</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">/</button>
+        <button class="text-center text-2xl font-bold rounded-md bg-light-grayish-orange text-very-dark-grayish-blue w-[63px] h-[63px]">X</button>
+      </div>
+      <div class="m-2 flex justify-between text-white">
+        <button class="text-center text-2xl font-bold rounded-md bg-desaturated-dark-blue-key w-full h-[70px] mr-2">RESET</button>
+        <button class="text-center text-4xl font-bold rounded-md bg-red w-full h-[70px] ml-2">=</button>
+      </div>
+    </div>
   </main>
 
 </body>

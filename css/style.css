@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --red: hsl(6, 63%, 50%);
+    --desaturated-dark-blue: hsl(225, 21%, 49%);
+    --very-dark-desaturated-toggle: hsl(223, 31%, 20%);
+}
+input[type="range"] {
+    display: flex;
+    align-content: center;
+    -webkit-appearance: none;
+     appearance: none;
+     background: transparent;
+     cursor: pointer;
+ }
+ 
+ /* Removes default focus */
+ input[type="range"]:focus {
+   outline: none;
+ }
+ 
+ /***** Chrome, Safari, Opera and Edge Chromium styles *****/
+ /* slider track */
+ input[type="range"]::-webkit-slider-runnable-track {
+    background-color: var(--very-dark-desaturated-toggle);
+    border-radius: 2rem;
+    height: 1.8rem;  
+    width: 100%;
+    padding: 5px;
+ }
+ 
+ /* slider thumb */
+ input[type="range"]::-webkit-slider-thumb {
+   -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    background-color: var(--red);
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-top: calc(1.8rem / 2) - (1.2rem / 2);
+    border-radius: 100%;
+ }
+ /******** Firefox styles ********/
+ /* slider track */
+ input[type="range"]::-moz-range-track {
+    background-color: #053a5f;
+    border-radius: 0.5rem;
+    height: 0.5rem;
+ }
+ 
+ /* slider thumb */
+ input[type="range"]::-moz-range-thumb {
+    border: none; /*Removes extra border that FF applies*/
+    border-radius: 0; /*Removes default border-radius that FF applies*/
+ 
+    /*custom styles*/
+    background-color: #5cd5eb;
+    height: 2rem;
+    width: 1rem;
+ }
