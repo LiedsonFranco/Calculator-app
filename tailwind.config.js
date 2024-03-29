@@ -1,15 +1,31 @@
-tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-           'very-dark-desaturated-blue': 'hsl(222, 26%, 31%)',
-           'very-dark-desaturated-keypad': 'hsl(223, 31%, 20%)',
-           'very-dark-desaturated-screen': 'hsl(224, 36%, 15%)',
-           'light-grayish-orange': 'hsl(30, 25%, 89%)',
-           'very-dark-grayish-blue': 'hsl(221, 14%, 31%)',
-           'red':'hsl(6, 63%, 50%)',
-           'desaturated-dark-blue-key': 'hsl(225, 21%, 49%)',
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ['./*.{html,js}'],
+  theme: {
+    extend: {
+      backgroundColor:{
+        skin:{
+          'base': 'var(--main-background)',
+          'screen': 'var(--calc-screen-background)',
+          'keys-and-toggle': 'var(--key-and-toggle-background)',
+          'function-key':'var(--function-key-background)',
+          'function-key-hover':'var(--function-key-hover)',
+          'equal-key': 'var(--equal-key-and-background-toggle)',
+          'equal-key-hover': 'var( --equal-key-hover)',
+          'key': 'var(--key-background)',
+          'key-hover': 'var(--key-hover)', 
+        }
+      },
+      textColor:{
+        skin:{
+          'base': 'var(--base-text)',
+          'key-base':'var(--key-color-text)',
+          'equal-key': 'var( --equal-key-text)',
+
         }
       }
-    }
-  }
+    },
+  },
+  plugins: [],
+}
+

@@ -3,9 +3,79 @@
     padding: 0;
 }
 :root{
-    --red: hsl(6, 63%, 50%);
-    --desaturated-dark-blue: hsl(225, 21%, 49%);
-    --very-dark-desaturated-toggle: hsl(223, 31%, 20%);
+   --main-background: hsl(222, 26%, 31%);
+   --key-and-toggle-background: hsl(223, 31%, 20%);
+   --calc-screen-background: hsl(224, 36%, 15%);
+
+   --function-key-background: hsl(225, 21%, 49%);
+   --function-key-shadow: hsl(6, 70%, 34%);
+   --function-key-hover: #a2b3e1;
+
+   --equal-key-and-background-toggle: hsl(6, 63%, 50%);
+   --equal-key-hover:#f96c5b;
+   --equal-key-text: white;
+
+   --key-shadow: hsl(6, 70%, 34%);
+   --key-background: hsl(30, 25%, 89%);
+   --key-shadow: hsl(28, 16%, 65%);
+   --key-hover:#ffffff;
+/* TEXT */
+   --key-color-text: hsl(221, 14%, 31%);
+   --screen-delete_function_key: hsl(0, 0%, 100%);
+   --base-text: hsl(0, 0%, 100%);
+
+   --red: hsl(6, 63%, 50%);
+   --desaturated-dark-blue: hsl(225, 21%, 49%);
+   --toggle: hsl(223, 31%, 20%);
+
+}
+/* THEME 2 */
+.theme_2{
+   --main-background: hsl(0, 0%, 90%);
+   --key-and-toggle-background: hsl(0, 5%, 81%);
+   --calc-screen-background: hsl(0, 0%, 93%);
+
+   --function-key-background: hsl(185, 42%, 37%);
+   --function-key-shadow: hsl(25, 99%, 27%);
+   --function-key-hover: #62b5bd;
+   --equal-key-and-background-toggle: hsl(25, 98%, 40%);
+   
+   --key-shadow: hsl(25, 99%, 27%);
+   --key-background:hsl(45, 7%, 89%);
+   --key-shadow: hsl(35, 11%, 61%);
+   --delete-key-hover: #ff8b38;
+
+   --key-color-text: hsl(60, 10%, 19%);
+   --screen-delete_function_key: hsl(0, 0%, 100%);
+
+   --base-text: hsl(60, 10%, 19%);
+}
+.theme_3{
+   --main-background: hsl(268, 75%, 9%);
+   --key-and-toggle-background: hsl(268, 71%, 12%);
+   --calc-screen-background: hsl(268, 71%, 12%);
+
+   --function-key-background: hsl(290, 70%, 36%);
+
+   --function-key-shadow: hsl(177, 92%, 70%);
+   --function-key-hover: #8631b0;
+
+   --equal-key-and-background-toggle: hsl(176, 100%, 44%);
+   --equal-key-hover: #94fff9;
+   --equal-key-text: #042e34;
+   --key-shadow: hsl(45, 7%, 89%);
+   --key-background:hsl(268, 47%, 21%);
+   --key-shadow: hsl(285, 91%, 52%);
+   --key-hover: #8631b0;
+
+   --key-color-text: hsl(52, 100%, 62%);
+   --screen-delete_function_key: hsl(198, 20%, 13%);
+
+   --base-text: hsl(52, 100%, 62%);
+
+}
+body{
+   font-family: "League Spartan", sans-serif;
 }
 input[type="range"] {
     display: flex;
@@ -16,7 +86,6 @@ input[type="range"] {
      cursor: pointer;
  }
  
- /* Removes default focus */
  input[type="range"]:focus {
    outline: none;
  }
@@ -24,7 +93,6 @@ input[type="range"] {
  /***** Chrome, Safari, Opera and Edge Chromium styles *****/
  /* slider track */
  input[type="range"]::-webkit-slider-runnable-track {
-    background-color: var(--very-dark-desaturated-toggle);
     border-radius: 2rem;
     height: 1.8rem;  
     width: 100%;
@@ -35,11 +103,15 @@ input[type="range"] {
  input[type="range"]::-webkit-slider-thumb {
    -webkit-appearance: none; /* Override default look */
     appearance: none;
-    background-color: var(--red);
+    background-color: var(--equal-key-and-background-toggle);
     height: 1.2rem;
     width: 1.2rem;
     margin-top: calc(1.8rem / 2) - (1.2rem / 2);
     border-radius: 100%;
+ }
+ input[type="range"]::-webkit-slider-thumb:hover{
+   cursor: pointer;
+
  }
  /******** Firefox styles ********/
  /* slider track */
@@ -59,3 +131,12 @@ input[type="range"] {
     height: 2rem;
     width: 1rem;
  }
+ input:hover{
+ }
+.key-shadow{
+   border-radius: 20%;
+   box-shadow: 0px 4px var(--key-shadow);
+}
+.function-key-shadow{
+   box-shadow: 0px 4px var(--function-key-shadow);
+}
