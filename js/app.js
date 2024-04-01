@@ -1,8 +1,9 @@
 let current_theme = 0
 let is_first_typing = true
 let n = []
-let soma = 0
+let result = 0.0
 let last_operation = null
+let can_add_comma = true
 let screen = document.querySelector('#screen')
 
 document.getElementById('theme').onchange = function(e) {
@@ -30,28 +31,118 @@ document.querySelectorAll('.number').forEach(element => {
 function make_operation(operation){
     switch (operation) {
         case '+':
-            console.log('soma')
-            
-            n.push((element.innerText))
+            if(last_operation != '+' && last_operation != null){
+                screen.innerText = screen.innerText.replaceAll(last_operation, '+')
+            }
+            n.push(parseFloat(screen.innerText.slice(screen.innerText.lastIndexOf('+')+1,)))
             screen.innerText += '+'
             last_operation = '+'
+            can_add_comma = true
             break;
+        case '-':
+            if(last_operation != '-' && last_operation != null){
+                screen.innerText = screen.innerText.replaceAll(last_operation, '-')
+            }
+            n.push(parseFloat(screen.innerText.slice(screen.innerText.lastIndexOf('-')+1,)))
+            screen.innerText += '-'
+            last_operation = '-'
+            can_add_comma = true
+            break;
+        case '*': 
+            if(last_operation != 'X' && last_operation != null){
+                screen.innerText = screen.innerText.replaceAll(last_operation, 'X')
+            }
+            n.push(parseFloat(screen.innerText.slice(screen.innerText.lastIndexOf('X')+1,)))
+            screen.innerText += 'X'
+            last_operation = 'X'
+            can_add_comma = true
+            break;
+        case '/':
+            if(last_operation != '/' && last_operation != null){
+                screen.innerText = screen.innerText.replaceAll(last_operation, '/')
+            }
+            n.push(parseFloat(screen.innerText.slice(screen.innerText.lastIndexOf('/')+1,)))
+            screen.innerText += '/'
+            last_operation = '/'
+            can_add_comma = true
+            break;
+        case ',':
+            if(can_add_comma){
+                screen.innerText += '.'
+                can_add_comma = false
+            }
+        break;
+        
     
         case '=':
-            console.log('igual')
+            console.log('equal')
             switch(last_operation){
                 case '+':
-                    soma = 0.0
-
-                    for(var i = 0; i <= n.length; i++){
-                        soma += n[i]
-                        console.log(n[i]+typeof(n[i]))
-                    }
-                    screen.innerText = soma
+                    result = 0.0
+                    n.push(parseFloat(screen.innerText.slice(screen.innerText.lastIndexOf('+')+1,)))
+                    n.forEach(element => {
+                        result += element
+                    });
+                    is_first_typing = true
+                    screen.innerText = result
+                break
+                case '-':
+                    result = 0.0
+                    n.push(parseFloat(screen.innerText.slice(screen.innerText.lastIndexOf('-')+1,)))
+                    n.forEach(element => {
+                        if(result === 0){
+                            result = element
+                        }
+                        else{
+                            result = result - element
+                        }
+                    });
+                    is_first_typing = true
+                    screen.innerText = result
+                break
+                case 'X':
+                    result = 0.0
+                    n.push(parseFloat(screen.innerText.slice(screen.innerText.lastIndexOf('X')+1,)))
+                    n.forEach(element => {
+                        if(result === 0){
+                            result = element
+                        }
+                        else{
+                            result = result * element
+                        }
+                    });
+                    is_first_typing = true
+                    screen.innerText = result
+                break
+                case '/':
+                console.log('division')
+                    result = 0.0
+                    n.push(parseFloat(screen.innerText.slice(screen.innerText.lastIndexOf('/')+1,)))
+                    n.forEach(element => {
+                        if(result === 0){
+                            result = element
+                        }
+                        else{
+                            result = result / element
+                        }
+                    });
+                    is_first_typing = true
+                    screen.innerText = result
+                break
+                default:
+                    reset()
                 break
             }
             break;
     }
+}
+
+function remove(){
+    if(screen.innerText.length == 0){
+        reset()
+    }
+    screen.innerText = screen.innerText.substring(0, screen.innerText.length-1)
+
 }
 
 function reset(){

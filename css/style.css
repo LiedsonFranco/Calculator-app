@@ -74,8 +74,11 @@
    --base-text: hsl(52, 100%, 62%);
 
 }
+#screen-bg{
+}
 body{
    font-family: "League Spartan", sans-serif;
+   overflow: auto;
 }
 input[type="range"] {
     display: flex;

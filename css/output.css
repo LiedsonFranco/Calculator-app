@@ -544,6 +544,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -552,10 +556,6 @@ video {
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-}
-
-.mb-0 {
-  margin-bottom: 0px;
 }
 
 .mb-1 {
@@ -578,10 +578,6 @@ video {
   margin-right: 1.75rem;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
 .mt-4 {
   margin-top: 1rem;
 }
@@ -596,6 +592,10 @@ video {
 
 .flex {
   display: flex;
+}
+
+.grid {
+  display: grid;
 }
 
 .h-\[60px\] {
@@ -622,6 +622,26 @@ video {
   width: 100%;
 }
 
+.max-w-\[500px\] {
+  max-width: 500px;
+}
+
+.max-w-\[600px\] {
+  max-width: 600px;
+}
+
+.max-w-\[550px\] {
+  max-width: 550px;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -632,6 +652,18 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-\[10px\] {
+  gap: 10px;
+}
+
+.gap-\[20px\] {
+  gap: 20px;
+}
+
+.gap-3 {
+  gap: 0.75rem;
 }
 
 .self-end {
@@ -729,6 +761,10 @@ video {
   color: var(--base-text);
 }
 
+.text-skin-equal-key {
+  color: var( --equal-key-text);
+}
+
 .text-skin-key-base {
   color: var(--key-color-text);
 }
@@ -736,10 +772,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-skin-equal-key {
-  color: var( --equal-key-text);
 }
 
 .transition-all {
@@ -788,4 +820,14 @@ video {
 
 .hover\:bg-skin-key-hover:hover {
   background-color: var(--key-hover);
+}
+
+@media (min-width: 768px) {
+  .md\:gap-3 {
+    gap: 0.75rem;
+  }
+
+  .md\:gap-6 {
+    gap: 1.5rem;
+  }
 }
