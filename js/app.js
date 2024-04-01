@@ -5,16 +5,39 @@ let result = 0.0
 let last_operation = null
 let can_add_comma = true
 let screen = document.querySelector('#screen')
+let theme_selector = document.getElementById('theme')
 
-document.getElementById('theme').onchange = function(e) {
+document.addEventListener('DOMContentLoaded', () => {
+    if(localStorage.getItem('prefers-color-scheme')){
+        let prefers_color_scheme = localStorage.getItem('prefers-color-scheme')
+        if(prefers_color_scheme == 1){
+            document.body.classList.add('theme_2')
+        }
+        else if(prefers_color_scheme == 2){
+            document.body.classList.add('theme_3')
+        }
+        else if(prefers_color_scheme == 0){
+            document.body.classList.remove('theme_3')
+            document.body.classList.remove('theme_2')
+        }
+        theme_selector.value = prefers_color_scheme
+    }
+})
+
+theme_selector.onchange = function(e) {
     current_theme = e.target.value
     if(current_theme == 1){
         document.body.classList.add('theme_2')
+        document.body.classList.remove('theme_3')
+        localStorage.setItem('prefers-color-scheme', 1)
     }
     else if(current_theme == 2){
+        localStorage.setItem('prefers-color-scheme', 2)
+        document.body.classList.remove('theme_2')
         document.body.classList.add('theme_3')
     }
     else if(current_theme == 0){
+        localStorage.setItem('prefers-color-scheme', 0)
         document.body.classList.remove('theme_3')
         document.body.classList.remove('theme_2')
     }
